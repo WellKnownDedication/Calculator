@@ -217,7 +217,14 @@ public class Main {
                 break;
             default:
                 if (!operationLsit.isEmpty()) {
-                    operationLsit.add(operationLsit.get(operationLsit.size() - 1) + c);
+                    if (operationLsit.get(operationLsit.size() - 1) != "+" ||
+                            operationLsit.get(operationLsit.size() - 1) != "-" ||
+                            operationLsit.get(operationLsit.size() - 1) != "/" ||
+                            operationLsit.get(operationLsit.size() - 1) != "*") {
+                        operationLsit.add(c);
+                    } else {
+                        operationLsit.add(operationLsit.get(operationLsit.size() - 1) + c);
+                    }
                 } else {
                     operationLsit.add(c);
                 }
